@@ -1,21 +1,31 @@
 package Case;
 
 public class HoaDon {
+    private String soCMND;
     private String ten;
-    private double tgVao;
-    private double tgRa;
-    private double tAnUong;
+    private int tgVao;
+    private int tgRa;
+    private int tAnUong;
     private Phong phong;
 
     public HoaDon() {
     }
 
-    public HoaDon(String ten, double tgVao, double tgRa, double tAnUong, Phong phong) {
+    public HoaDon(String soCMND, String ten, int tgVao, int tgRa, int tAnUong, Phong phong) {
+        this.soCMND = soCMND;
         this.ten = ten;
         this.tgVao = tgVao;
         this.tgRa = tgRa;
         this.tAnUong = tAnUong;
         this.phong = phong;
+    }
+
+    public String getSoCMND() {
+        return soCMND;
+    }
+
+    public void setSoCMND(String soCMND) {
+        this.soCMND = soCMND;
     }
 
     public String getTen() {
@@ -26,27 +36,27 @@ public class HoaDon {
         this.ten = ten;
     }
 
-    public double getTgVao() {
+    public int getTgVao() {
         return tgVao;
     }
 
-    public void setTgVao(double tgVao) {
+    public void setTgVao(int tgVao) {
         this.tgVao = tgVao;
     }
 
-    public double getTgRa() {
+    public int getTgRa() {
         return tgRa;
     }
 
-    public void setTgRa(double tgRa) {
+    public void setTgRa(int tgRa) {
         this.tgRa = tgRa;
     }
 
-    public double gettAnUong() {
+    public int gettAnUong() {
         return tAnUong;
     }
 
-    public void settAnUong(double tAnUong) {
+    public void settAnUong(int tAnUong) {
         this.tAnUong = tAnUong;
     }
 
@@ -61,12 +71,12 @@ public class HoaDon {
     @Override
     public String toString() {
         return "HoaDon{" +
-                "Tên = " + ten +
-                ", TGVào = " + tgVao +
-                ", TGRa = " + tgRa +
-                ", TiềnĂnUống = " + tAnUong +
+                "Số CMND = " + soCMND +
+                ", Tên = " + ten +
+                ", TGian vào = " + tgVao +
+                ", TGian ra = " + tgRa +
+                ", Tiền ăn uống = " + tAnUong +
                 ", Phòng = " + phong +
                 '}';
     }
-
 }

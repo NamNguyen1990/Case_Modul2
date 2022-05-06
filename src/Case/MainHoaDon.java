@@ -23,17 +23,17 @@ public class MainHoaDon {
         System.out.println("4 - Tìm kiếm hóa đơn theo khoảng thời gian");
         System.out.println("5 - Tính tiền hóa đơn");
         System.out.println("6 - Xóa hóa đơn");
-        System.out.println("7 - Xuất hoá đơn(xuất file csv");
+        System.out.println("7 - Xuất hoá đơn(xuất file csv)");
         System.out.println("8 - Thoát");
 
         do {
-            boolean check1 = false;
-            while (!check1) {
+            boolean check = false;
+            while (!check) {
                 System.out.println("Mời bạn chọn chức năng");
                 try {
                     luaChon = sc.nextInt();
                     if (luaChon<0 || luaChon >8) throw new Exception();
-                    check1 = true;
+                    check = true;
                 } catch (InputMismatchException e) {
                     System.out.println(ANSI_RED + "Chỉ được nhập số" + ANSI_RESET);
                     sc.nextLine();
@@ -42,38 +42,100 @@ public class MainHoaDon {
                 }
             }
 
+            if (luaChon == 1) {
+                System.out.println(ANSI_BLUE + "====Danh sách hóa đơn!====" + ANSI_RESET);
+                quanLyHoaDon.hienThi();
+
+            }
+            else if (luaChon == 2) {
+
+                System.out.println("Mời nhập vào thông tin hóa đơn");
+                System.out.println("Mời nhập số CMND của khách chơi phòng");
+                String soCMND = nhapChu.nextLine();
+                System.out.println("Nhập họ tên khách làng chơi:");
+                String ten = nhapChu.nextLine();
+
+                int tgVao = -1;
+                boolean check1 = false;
+                while (!check1) {
+                    System.out.println("Nhập thời gian khách vào phòng");
+                    try {
+                        tgVao = sc.nextInt();
+                        check1 = true;
+                    } catch (Exception e) {
+                        System.out.println(ANSI_RED + "Chỉ được nhập số" + ANSI_RESET);
+                        sc.nextLine();
+                    }
+                }
+
+                int tgRa = -1;
+                boolean check2 = false;
+                while (!check2) {
+                    System.out.println("Nhập thời gian khách trả phòng");
+                    try {
+                        tgRa = sc.nextInt();
+                        check2 = true;
+                    } catch (Exception e) {
+                        System.out.println(ANSI_RED + "Chỉ được nhập số" + ANSI_RESET);
+                        sc.nextLine();
+                    }
+                }
+
+                int tAnUong = -1;
+                boolean check3 = false;
+                while (!check3) {
+                    System.out.println("Nhập tiền khách ăn uống trong phòng");
+                    try {
+                        tAnUong = sc.nextInt();
+                        check3 = true;
+                    } catch (Exception e) {
+                        System.out.println(ANSI_RED + "Chỉ được nhập số" + ANSI_RESET);
+                        sc.nextLine();
+                    }
+                }
+
+                System.out.println("Chọn phòng khách vào: (Nhập số phòng)");
+                quanLyPhong.hienThi();
+                int idOfPhong = sc.nextInt();
+                quanLyHoaDon.them(new HoaDon(soCMND,ten,tgVao,tgRa,tAnUong,QuanLyPhong.phongList.get(quanLyPhong.timKiemphongSo(idOfPhong))));
+//                quanLyHoaDon.hienThi();
+
+            }
+            else if (luaChon == 3) {
+
+            }
+            else if (luaChon == 4) {
+
+            }
+            else if (luaChon == 5) {
+                int sum = 0;
+                System.out.println("Nhập vào số phòng khách vào");
+                int idOfPhong = sc.nextInt();
+                sum = QuanLyPhong.phongList.get(quanLyPhong.timKiemphongSo(idOfPhong)).getGiaPhong();
+
+                System.out.println(sum);
+
+            }
+            else if (luaChon == 6) {
+
+            }
+            else if (luaChon == 7) {
+
+            }
+
+
+
+        } while (luaChon != 8);
 
 
 
 
 
 
-        }while (luaChon != 8);
 
 
 
 
-
-
-
-
-
-
-
-        System.out.println("Mời nhập vào thông tin hóa đơn");
-        System.out.println("Nhập họ tên khách làng chơi:");
-        String ten = nhapChu.nextLine();
-        System.out.println("Nhập thời gian khách vào phòng:");
-        double tgVao = sc.nextInt();
-        System.out.println("Nhập thời gian khách trả phòng");
-        double tgRa = sc.nextInt();
-        System.out.println("Nhập tiền khách ăn uống trong phòng");
-        double tAnUong = sc.nextInt();
-        System.out.println("Chọn phòng khách vào: (Nhập số phòng)");
-        quanLyPhong.hienThi();
-        int idOfPhong = sc.nextInt();
-        quanLyHoaDon.them(new HoaDon(ten,tgVao,tgRa,tAnUong,QuanLyPhong.phongList.get(quanLyPhong.timKiemphongSo(idOfPhong))));
-        quanLyHoaDon.hienThi();
 
 
 

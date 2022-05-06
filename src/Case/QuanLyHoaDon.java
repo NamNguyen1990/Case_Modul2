@@ -39,15 +39,30 @@ public class QuanLyHoaDon {
     }
 
     public void hienThi() {
+        int soHD = 0;
         boolean check = false;
         for (int i=0; i<hoaDonList.size(); i++) {
             System.out.println(hoaDonList.get(i));
+            soHD++;
+            System.out.println("Số hóa đơn thứ: " + soHD);
+            System.out.println("------------------------------------------------------------");
             check = true;
         }
+
+//        for (int i=0; i<hoaDonList.size(); i++) {
+//            sum = sum+soHD;
+//            System.out.println("Số hóa đơn thứ: " + sum);
+//            System.out.println("------------------------------------------------------------");
+//            check = true;
+//        }
+
+//            System.out.println("Số hóa đơn thứ: " + soHD);
+//            System.out.println("------------------------------------------------------------");
         if (check == false) {
             System.out.println(ANSI_RED + "Chưa có hóa đơn nào được thêm mới!" + ANSI_RESET);
         }
     }
+
 
 
 
