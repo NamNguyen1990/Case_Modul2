@@ -19,7 +19,7 @@ public class MainHoaDon {
         System.out.println("=====Menu Hóa Đơn====");
         System.out.println("1 - Hiển thị danh sách hóa đơn");
         System.out.println("2 - Tạo hóa đơn");
-        System.out.println("3 - Sửa thông tin hóa đơn theo số hóa đơn");
+        System.out.println("3 - Sửa thông tin hóa đơn theo số CMND của khách");
         System.out.println("4 - Tìm kiếm hóa đơn theo khoảng thời gian");
         System.out.println("5 - Tính tiền hóa đơn");
         System.out.println("6 - Xóa hóa đơn");
@@ -111,10 +111,10 @@ public class MainHoaDon {
                 int sum = 0;
                 System.out.println("Nhập vào số phòng khách vào");
                 int idOfPhong = sc.nextInt();
-                sum = QuanLyPhong.phongList.get(quanLyPhong.timKiemphongSo(idOfPhong)).getGiaPhong();
-
-                System.out.println(sum);
-
+                System.out.println("Nhập vào số CMND của khách");
+                String soCMND = nhapChu.nextLine();
+                sum = QuanLyPhong.phongList.get(quanLyPhong.timKiemphongSo(idOfPhong)).getGiaPhong()*(quanLyHoaDon.hoaDonList.get(quanLyHoaDon.timKiemCMND(soCMND)).getTgRa() - quanLyHoaDon.hoaDonList.get(quanLyHoaDon.timKiemCMND(soCMND)).getTgVao()) + quanLyHoaDon.hoaDonList.get(quanLyHoaDon.timKiemCMND(soCMND)).gettAnUong();
+                System.out.println("Tổng tiền khách phải nôn ra là: " + sum);
             }
             else if (luaChon == 6) {
 

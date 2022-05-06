@@ -49,19 +49,32 @@ public class QuanLyHoaDon {
             check = true;
         }
 
-//        for (int i=0; i<hoaDonList.size(); i++) {
-//            sum = sum+soHD;
-//            System.out.println("Số hóa đơn thứ: " + sum);
-//            System.out.println("------------------------------------------------------------");
-//            check = true;
-//        }
-
-//            System.out.println("Số hóa đơn thứ: " + soHD);
-//            System.out.println("------------------------------------------------------------");
         if (check == false) {
             System.out.println(ANSI_RED + "Chưa có hóa đơn nào được thêm mới!" + ANSI_RESET);
         }
     }
+
+    public int timKiemCMND (String soCMND) {  // Cái này trả về vị trí (chỉ vị trí ko hiển thị thông tin) phục vụ cho việc sửa theo Số CMND nhập vào
+        for (int i = 0; i < hoaDonList.size(); i++) {
+            if (hoaDonList.get(i).getSoCMND().equals(soCMND)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public void suaHoaDon (String soCMND, HoaDon hoaDon) { // Cái này sửa theo phòng Số nhập vào
+        int indexOf = timKiemCMND(soCMND);
+        if (indexOf == -1) {
+            System.out.println(ANSI_RED + "Không có phòng nào có số như trên" + ANSI_RESET);
+        } else {
+            hoaDonList.set(indexOf, hoaDon);
+            System.out.println(ANSI_BLUE + "Bạn đã sửa thành công thông tin Phòng trên" + ANSI_RESET);
+        }
+    }
+
+
+
+
 
 
 
