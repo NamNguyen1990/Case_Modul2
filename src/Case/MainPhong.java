@@ -17,8 +17,8 @@ public class MainPhong {
         int luaChon = -1;
 
         System.out.println("=====Menu Chọn Phòng====");
-        System.out.println(ANSI_RED + "NOTE: Nhập 0 lần đầu tiên để hiện thị phòng có sẵn trước khi thêm mới, nếu không sẽ mất toàn bộ dữ liệu!" + ANSI_RESET);
-        System.out.println("0 - Hiển thị danh sách phòng có sẵn");
+//        System.out.println(ANSI_RED + "NOTE: Nhập 0 lần đầu tiên để hiện thị phòng có sẵn trước khi thêm mới, nếu không sẽ mất toàn bộ dữ liệu!" + ANSI_RESET);
+//        System.out.println("0 - Hiển thị danh sách phòng có sẵn");
         System.out.println("1 - Hiển thị số lượng phòng");
         System.out.println("2 - Thêm 1 phòng mới");
         System.out.println("3 - Sửa thông tin phòng theo số phòng");
@@ -45,13 +45,13 @@ public class MainPhong {
                     System.out.println(ANSI_RED + "Chỉ được nhập số từ 0 --> 9" + ANSI_RESET);
                 }
             }
-            if (luaChon == 0) {
-
-                System.out.println("Danh sách phòng có sẵn");
-                QuanLyPhong.setPhongList(GhiDocFile.readFromFile("KtraMD2.csv",quanLyPhong.phongList));
-
-            }
-            else if (luaChon == 1) {
+//            if (luaChon == 0) {
+//
+//                System.out.println("Danh sách phòng có sẵn");
+//                QuanLyPhong.setPhongList(GhiDocFile.readFromFile("KtraMD2.csv",quanLyPhong.phongList));
+//
+//            }
+            if (luaChon == 1) {
                 System.out.println(ANSI_BLUE + "====Danh sách phòng====" + ANSI_RESET);
                 quanLyPhong.hienThi();
             }
@@ -83,7 +83,7 @@ public class MainPhong {
                         sc.nextLine();
                     }
                 }
-                System.out.println("Nhập vào trạng thái của phòng (Còn Phòng/Hết Phòng)");
+                System.out.println("Nhập vào trạng thái của phòng (Còn Phòng" + ANSI_RED + "(Con)" + ANSI_RESET + "/Hết Phòng" + ANSI_RED+ "(Het)"+ ANSI_RESET +")");
                 String trangThai = nhapChu.nextLine();
 
                 Phong phong = new Phong(phongSo,loaiPhong,giaPhong,trangThai);

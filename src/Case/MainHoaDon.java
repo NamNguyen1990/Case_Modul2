@@ -1,5 +1,6 @@
 package Case;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainHoaDon {
@@ -12,6 +13,52 @@ public class MainHoaDon {
         Scanner nhapChu = new Scanner(System.in);
         Scanner nhapChu1 = new Scanner(System.in);
         Scanner nhapChu2 = new Scanner(System.in);
+
+        int luaChon = -1;
+
+        System.out.println("=====Menu Hóa Đơn====");
+        System.out.println("1 - Hiển thị danh sách hóa đơn");
+        System.out.println("2 - Tạo hóa đơn");
+        System.out.println("3 - Sửa thông tin hóa đơn theo số hóa đơn");
+        System.out.println("4 - Tìm kiếm hóa đơn theo khoảng thời gian");
+        System.out.println("5 - Tính tiền hóa đơn");
+        System.out.println("6 - Xóa hóa đơn");
+        System.out.println("7 - Xuất hoá đơn(xuất file csv");
+        System.out.println("8 - Thoát");
+
+        do {
+            boolean check1 = false;
+            while (!check1) {
+                System.out.println("Mời bạn chọn chức năng");
+                try {
+                    luaChon = sc.nextInt();
+                    if (luaChon<0 || luaChon >8) throw new Exception();
+                    check1 = true;
+                } catch (InputMismatchException e) {
+                    System.out.println(ANSI_RED + "Chỉ được nhập số" + ANSI_RESET);
+                    sc.nextLine();
+                } catch (Exception e) {
+                    System.out.println(ANSI_RED + "Chỉ được nhập số từ 0 --> 8" + ANSI_RESET);
+                }
+            }
+
+
+
+
+
+
+
+        }while (luaChon != 8);
+
+
+
+
+
+
+
+
+
+
 
         System.out.println("Mời nhập vào thông tin hóa đơn");
         System.out.println("Nhập họ tên khách làng chơi:");
@@ -38,5 +85,10 @@ public class MainHoaDon {
 
 
     }
+
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_RESET = "\u001B[0m";
 }
 

@@ -7,8 +7,8 @@ import java.util.List;
 public class QuanLyPhong {
     public static List<Phong> phongList = new ArrayList<>();
 
-    public static final String CON = "Còn Phòng";
-    public static final String HET = "Hết Phòng";
+    public static final String CON = "Con";
+    public static final String HET = "Het";
 
     public static List<Phong> getPhongList() {
         return phongList;
