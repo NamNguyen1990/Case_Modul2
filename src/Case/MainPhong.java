@@ -23,7 +23,7 @@ public class MainPhong {
         System.out.println("2 - Thêm 1 phòng mới");
         System.out.println("3 - Sửa thông tin phòng theo số phòng");
         System.out.println("4 - Hiển thị Phòng Còn/Phòng Hết");
-        System.out.println("5 - Thay đổi trạng thái phòng (Từ Còn phòng --> Hết phòng hoặc ngược lại)");
+        System.out.println("5 - Cập nhật trạng thái phòng (Từ Còn phòng --> Hết phòng hoặc ngược lại)");
         System.out.println("6 - Tìm Phòng theo số phòng (hiển thị 1 Phòng duy nhất)");
         System.out.println("7 - Tìm Phòng theo giá {hiển thị" + " " + ANSI_RED + "(những phòng)" + ANSI_RESET + " " + "cùng mức giá}");
         System.out.println("8 - Xem lại danh sách Menu");
@@ -89,7 +89,7 @@ public class MainPhong {
                 Phong phong = new Phong(phongSo,loaiPhong,giaPhong,trangThai);
 
                 System.out.println("Bạn có muốn thêm Phòng này vào danh sách phòng mới không?" + ANSI_RED + "[Chọn: Y/E(Exit) hoặc nhập bất kỳ để không thêm]" + ANSI_RESET);
-                System.out.println(ANSI_RED + "NOTE: Nhập 0 lần đầu tiên để hiện thị phòng có sẵn trước khi thêm phòng mới, nếu không sẽ mất toàn bộ dữ liệu!" + ANSI_RESET);
+//                System.out.println(ANSI_RED + "NOTE: Nhập 0 lần đầu tiên để hiện thị phòng có sẵn trước khi thêm phòng mới, nếu không sẽ mất toàn bộ dữ liệu!" + ANSI_RESET);
                 char result, a = 'Y', b = 'E';
                 result = nhapChu1.next().charAt(0);
                 if (result == a) {
@@ -233,7 +233,7 @@ public class MainPhong {
                 System.out.println("2 - Thêm 1 phòng mới");
                 System.out.println("3 - Sửa thông tin phòng theo số phòng");
                 System.out.println("4 - Hiển thị Phòng Còn/Phòng Hết");
-                System.out.println("5 - Thay đổi trạng thái phòng (Từ Còn phòng --> Hết phòng hoặc ngược lại)");
+                System.out.println("5 - Cập nhật trạng thái phòng (Từ Còn phòng --> Hết phòng hoặc ngược lại)");
                 System.out.println("6 - Tìm Phòng theo số phòng (hiển thị 1 Phòng duy nhất)");
                 System.out.println("7 - Tìm Phòng theo giá {hiển thị" + " " + ANSI_RED + "(những phòng)" + ANSI_RESET + " " + "cùng mức giá}");
                 System.out.println("8 - Xem lại danh sách Menu");

@@ -118,7 +118,7 @@ public class QuanLyPhong {
         if (indexOf == -1) {
             System.out.println(ANSI_RED + "Không có Phòng nào có số này" + ANSI_RESET);
         } else {
-            phongList.get(indexOf).setTrangThai("Hết Phòng");
+            phongList.get(indexOf).setTrangThai("Het");
             System.out.println(ANSI_BLUE + "Bạn đã cập nhật thành công!" + ANSI_RESET);
         }
     }
@@ -128,7 +128,7 @@ public class QuanLyPhong {
         if (indexOf == -1) {
             System.out.println(ANSI_RED + "Không có Phòng nào có số này" + ANSI_RESET);
         } else {
-            phongList.get(indexOf).setTrangThai("Còn Phòng");
+            phongList.get(indexOf).setTrangThai("Con");
             System.out.println(ANSI_BLUE + "Bạn đã cập nhật thành công!" + ANSI_RESET);
         }
     }

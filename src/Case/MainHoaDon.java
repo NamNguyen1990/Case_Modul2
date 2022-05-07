@@ -21,9 +21,9 @@ public class MainHoaDon {
         System.out.println("2 - Tạo hóa đơn");
         System.out.println("3 - Sửa thông tin hóa đơn theo số CMND của khách");
         System.out.println("4 - Tìm kiếm hóa đơn theo khoảng thời gian");
-        System.out.println("5 - Tính tiền hóa đơn");
-        System.out.println("6 - Xóa hóa đơn");
-        System.out.println("7 - Xuất hoá đơn(xuất file csv)");
+        System.out.println("5 - Tính tiền hóa đơn - Xóa luôn hóa đơn");
+        System.out.println("6 - Xuất hoá đơn(xuất file csv)");
+        System.out.println("7 - Xem lại Menu!");
         System.out.println("8 - Thoát");
 
         do {
@@ -44,7 +44,7 @@ public class MainHoaDon {
 
             if (luaChon == 1) {
                 System.out.println(ANSI_BLUE + "====Danh sách hóa đơn!====" + ANSI_RESET);
-                quanLyHoaDon.hienThi();
+                quanLyHoaDon.hienThiFull();
 
             }
             else if (luaChon == 2) {
@@ -109,20 +109,37 @@ public class MainHoaDon {
             }
             else if (luaChon == 5) {
                 int sum = 0;
-                System.out.println("Nhập vào số phòng khách vào");
-                int idOfPhong = sc.nextInt();
+//                int sum1 = 0;
+
                 System.out.println("Nhập vào số CMND của khách");
                 String soCMND = nhapChu.nextLine();
+                quanLyHoaDon.timKiemCMND1(soCMND);
+                System.out.println("Nhập số phòng khách vào mua vui: ");
+                int idOfPhong = sc.nextInt();
+//                int idOfPhong1 = sc.nextInt();
+
                 sum = QuanLyPhong.phongList.get(quanLyPhong.timKiemphongSo(idOfPhong)).getGiaPhong()*(quanLyHoaDon.hoaDonList.get(quanLyHoaDon.timKiemCMND(soCMND)).getTgRa() - quanLyHoaDon.hoaDonList.get(quanLyHoaDon.timKiemCMND(soCMND)).getTgVao()) + quanLyHoaDon.hoaDonList.get(quanLyHoaDon.timKiemCMND(soCMND)).gettAnUong();
+//                sum1 = (QuanLyPhong.phongList.get(quanLyPhong.timKiemphongSo(idOfPhong)).getGiaPhong() * (quanLyHoaDon.hoaDonList.get(quanLyPhong.timKiemphongSo(idOfPhong1)).getTgRa() - quanLyHoaDon.hoaDonList.get(quanLyPhong.timKiemphongSo(idOfPhong1)).getTgVao())) + quanLyHoaDon.hoaDonList.get(quanLyPhong.timKiemphongSo(idOfPhong1)).gettAnUong();
+//                System.out.println("Tổng tiền khách phải trả là: " + sum1);
+//                Viết thêm hàm tìm kiếm phòng số bao nhiêu, hàm trên không đúng! Viết hàm này trong phần Quản Lý hóa đơn chưa có nên ko gọi đúng đc!
+
                 System.out.println("Tổng tiền khách phải nôn ra là: " + sum);
+                quanLyHoaDon.xoaHD(soCMND);
             }
             else if (luaChon == 6) {
 
             }
             else if (luaChon == 7) {
-
+                System.out.println("=====Menu Hóa Đơn====");
+                System.out.println("1 - Hiển thị danh sách hóa đơn");
+                System.out.println("2 - Tạo hóa đơn");
+                System.out.println("3 - Sửa thông tin hóa đơn theo số CMND của khách");
+                System.out.println("4 - Tìm kiếm hóa đơn theo khoảng thời gian");
+                System.out.println("5 - Tính tiền hóa đơn - Xóa luôn hóa đơn");
+                System.out.println("6 - Xuất hoá đơn(xuất file csv)");
+                System.out.println("7 - Xem lại Menu!");
+                System.out.println("8 - Thoát");
             }
-
 
 
         } while (luaChon != 8);

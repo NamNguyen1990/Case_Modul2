@@ -51,10 +51,13 @@ public class Phong {
     @Override
     public String toString() {
         return "Phong{" +
-                "phongSo = " + phongSo +
+                ANSI_RED + "phongSo = " + phongSo + ANSI_RESET +
                 ", loaiPhong = " + loaiPhong  +
                 ", giaPhong = " + giaPhong +
                 ", trangThai = " + trangThai +
                 '}';
     }
+
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_RESET = "\u001B[0m";
 }

@@ -71,7 +71,7 @@ public class HoaDon {
     @Override
     public String toString() {
         return "HoaDon{" +
-                "Số CMND = " + soCMND +
+                ANSI_RED + "Số CMND = " + soCMND + ANSI_RESET +
                 ", Tên = " + ten +
                 ", TGian vào = " + tgVao +
                 ", TGian ra = " + tgRa +
@@ -79,4 +79,8 @@ public class HoaDon {
                 ", Phòng = " + phong +
                 '}';
     }
+
+
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_RESET = "\u001B[0m";
 }
