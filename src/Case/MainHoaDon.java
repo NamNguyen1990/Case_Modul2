@@ -3,7 +3,8 @@ package Case;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MainHoaDon {
+public class
+MainHoaDon {
 
     public static void main(String[] args) {
         QuanLyHoaDon quanLyHoaDon = new QuanLyHoaDon();

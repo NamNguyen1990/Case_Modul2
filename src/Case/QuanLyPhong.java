@@ -57,7 +57,7 @@ public class QuanLyPhong {
         }
     }
 
-    public void timKiemPhongGia (String giaPhong) {  // Cái này trả về các thông tin (hiển thị luôn thông tin) phục vụ cho việc tìm kiếm theo giá nhập vào
+    public void timKiemPhongGia (String giaPhong) {  // Cái này trả về các thông tin (hiển thị luôn thông tin) phục vụ cho việc tìm kiếm theo 1 giá nhập vào
         boolean check = false;
         for (int i=0; i<phongList.size(); i++) {
             if (String.valueOf(phongList.get(i).getGiaPhong()).contains(giaPhong)) {
@@ -69,6 +69,15 @@ public class QuanLyPhong {
             System.out.println(ANSI_RED + "Nhập không đúng (không có Phòng này)" + ANSI_RESET);
         }
     }
+
+    public void timKiemKhoangGia (int gia1,int gia2) {    // Cái này nhập vào khoảng giá nào đến giá nào.
+        for (int i = 0; i < phongList.size(); i++) {
+            if (gia1>=phongList.get(i).getGiaPhong() || gia2 <= phongList.get(i).getGiaPhong()){
+                System.out.println(phongList.get(i));
+            }
+        }
+    }
+
     public int timKiemphongSo (int phongSo) {  // Cái này trả về vị trí (chỉ vị trí ko hiển thị thông tin) phục vụ cho việc sửa theo phòng Số nhập vào
         for (int i = 0; i < phongList.size(); i++) {
             if (phongList.get(i).getPhongSo() == phongSo) {
